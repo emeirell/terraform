@@ -15,3 +15,9 @@ variable "subnetName" {
   description = "Type the name of your new Subnet."
   default     = "MySubnet"
 }
+
+variable "vpcID" {
+  type        = string
+  description = "Type the VPC ID where to create your Subnet."
+  default     = "VPC_ID_GOES_HERE"
+}
