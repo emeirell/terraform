@@ -22,7 +22,7 @@ data "aws_availability_zones" "available" {}
 # Create a Subnet
 
 resource "aws_subnet" "main" {
-  vpc_id     = aws_vpc.main.id
+  vpc_id     = var.vpcID
   cidr_block = var.cidr
 
   tags = {
