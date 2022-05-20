@@ -16,4 +16,5 @@ provider "aws" {
 
 # Create a VPC
 resource "aws_vpc" "example" {
-  cidr_block = var.cidr
+  cidr_block = var.cidr 
+}
