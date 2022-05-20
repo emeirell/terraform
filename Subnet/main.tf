@@ -20,3 +20,12 @@ data "aws_region" "current" {}
 data "aws_availability_zones" "available" {}
 
 # Create a Subnet
+
+resource "aws_subnet" "main" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.cidr
+
+  tags = {
+    Name = var.subnetName
+  }
+}
