@@ -28,7 +28,7 @@ variable "public" {
   default     = "false"
 }
 
-variable "varZone" {
+variable "avaZone" {
   type        = string
   description = "Availability Zone"
   default     = "us-east-1a"
