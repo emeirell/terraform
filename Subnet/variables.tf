@@ -12,6 +12,6 @@ variable "cidr" {
 
 variable "subnetName" {
   type        = string
-  description = "Type the name of your nee Subnet."
-  default     = "MyVPC"
+  description = "Type the name of your new Subnet."
+  default     = "MySubnet"
 }
