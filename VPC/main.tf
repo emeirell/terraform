@@ -20,7 +20,7 @@ data "aws_region" "current" {}
 data "aws_availability_zones" "available" {}
 
 # Create a VPC
-resource "aws_vpc" var.vpcName {
+resource "aws_vpc" "main" {
   cidr_block = var.cidr
   instance_tenancy = "default"
   enable_dns_support = var.dnsSupport    #gives you an internal domain name
