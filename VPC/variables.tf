@@ -19,11 +19,11 @@ variable "vpcName" {
 variable "dnsSupport" {
   type        = string
   description = "DNS support in the VPC."
-  default     = "True"
+  default     = "true"
 }
 
 variable "hostSupport" {
   type        = string
   description = "DNS hostnames in the VPC"
-  default     = "True"
+  default     = "false"
 }
