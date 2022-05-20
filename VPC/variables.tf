@@ -15,3 +15,15 @@ variable "vpcName" {
   description = "Type the name of your VPC"
   default     = "MyVPC"
 }
+
+variable "dnsSupport" {
+  type        = string
+  description = "DNS support in the VPC."
+  default     = "True"
+}
+
+variable "hostSupport" {
+  type        = string
+  description = "DNS hostnames in the VPC"
+  default     = "True"
+}
