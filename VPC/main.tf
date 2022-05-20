@@ -14,4 +14,6 @@ provider "aws" {
   region = var.region
 }
 
-data "aws_availability_zones" "available" {}
+# Create a VPC
+resource "aws_vpc" "example" {
+  cidr_block = var.cidr
