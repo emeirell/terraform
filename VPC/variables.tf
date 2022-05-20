@@ -9,3 +9,9 @@ variable "cidr" {
   description = "Select the CIDR for the VPC."
   default     = "172.16.0.0/16"
 }
+
+variable "vpcName" {
+  type        = string
+  description = "Type the name of your VPC"
+  default     = "MyVPC"
+}
