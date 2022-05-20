@@ -21,3 +21,15 @@ variable "vpcID" {
   description = "Type the VPC ID where to create your Subnet."
   default     = "VPC_ID_GOES_HERE"
 }
+
+variable "public" {
+  type        = string
+  description = "Make this subnet Public"
+  default     = "false"
+}
+
+variable "varZone" {
+  type        = string
+  description = "Availability Zone"
+  default     = "us-east-1a"
+}
