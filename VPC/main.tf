@@ -16,5 +16,11 @@ provider "aws" {
 
 # Create a VPC
 resource "aws_vpc" "example" {
-  cidr_block = var.cidr 
+  cidr_block = var.cidr
+  instance_tenancy = "default"
+  
+  tags = {
+    Name = var.vpcName
+  }
+  
 }
