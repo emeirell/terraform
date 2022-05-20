@@ -1,8 +1,17 @@
-provider vra {
-  url           = var.vra_url
-  refresh_token = var.vra_refresh_token
+###########################################################################
+# Terraform required providers                                            #
+###########################################################################
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
 }
 
-data vra_project "this" {
-  name = var.project_name
+provider "aws" {
+  region = var.region
 }
+
+data "aws_availability_zones" "available" {}
