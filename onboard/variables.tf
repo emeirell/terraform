@@ -4,16 +4,28 @@ variable "region" {
   default     = "us-east-1"
 }
 
+variable "avaZone" {
+  type        = string
+  description = "Availability Zone"
+  default     = "us-east-1a"
+}
+
 variable "cidr" {
   type        = string
   description = "Select the CIDR for the VPC."
   default     = "172.16.0.0/16"
 }
 
-variable "vpcName" {
+variable "subcidr" {
   type        = string
-  description = "Type the name of your VPC"
-  default     = "MyVPC"
+  description = "Select the CIDR Block for the new Subnet."
+  default     = "172.16.10.0/24"
+}
+
+variable "public" {
+  type        = string
+  description = "Make this subnet Public"
+  default     = "false"
 }
 
 variable "dnsSupport" {
@@ -26,4 +38,22 @@ variable "hostSupport" {
   type        = string
   description = "DNS hostnames in the VPC"
   default     = "false"
+}
+
+variable "vpcName" {
+  type        = string
+  description = "Type the name of your VPC"
+  default     = "MyVPC"
+}
+
+variable "subnetName" {
+  type        = string
+  description = "Type the name of your new Subnet."
+  default     = "MySubnet"
+}
+
+variable "igName" {
+  type        = string
+  description = "Type the name of your new Internet Gateway."
+  default     = "MyIG"
 }
