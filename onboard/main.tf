@@ -20,7 +20,7 @@ data "aws_region" "current" {}
 data "aws_availability_zones" "available" {}
 
 # Create a VPC
-resource "aws_vpc" "main" {
+resource "aws_vpc" "vpc-main" {
   cidr_block = var.cidr
   instance_tenancy = "default"
   enable_dns_support = var.dnsSupport    #gives you an internal domain name
@@ -28,6 +28,27 @@ resource "aws_vpc" "main" {
   
   tags = {
     Name = var.vpcName
+  }
+
+}
+# Create a Subnet
+resource "aws_subnet" "sub-main" {
+  vpc_id     = “${aws_vpc.vpc-main.id}”
+  cidr_block = var.cidr
+  map_public_ip_on_launch = var.public # This makes the subnet public
+  availability_zone = var.avaZone
+
+  tags = {
+    Name = var.subnetName 
+  }
+
+}
+ # Create a Internet Gateway
+ resource "aws_internet_gateway" "prod-igw" {
+    vpc_id = “${aws_vpc.vpc-main.id}”
+    tags {
+        Name = var.igName
+  
   }
   
 }
