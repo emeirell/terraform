@@ -54,3 +54,20 @@ resource "aws_internet_gateway" "prod-igw" {
   }
   
 }
+
+# Create IAM User
+resource "aws_iam_user" "iam-user" {
+  name = var.usrname
+  
+  tags = {
+    Name = "Tag de User" 
+  }
+}
+
+# Set Password on User
+resource "aws_iam_user_policy" "password" {
+  name = "password"
+  user = aws_iam_user.iam-user.name
+  password = var.usrpasswd
+  password_reset_required = "True"
+}
