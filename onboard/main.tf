@@ -37,6 +37,7 @@ resource "aws_subnet" "sub-main" {
   cidr_block = var.subcidr
   map_public_ip_on_launch = var.public # This makes the subnet public
   availability_zone = var.avaZone
+  depends_on = [aws_vpc.vpc-main]
 
   tags = {
     Name = var.subnetName 
@@ -46,8 +47,9 @@ resource "aws_subnet" "sub-main" {
 # Create a Internet Gateway
 resource "aws_internet_gateway" "prod-igw" {
   vpc_id = aws_vpc.vpc-main.id
-    
-  tags {
+  depends_on = [aws_vpc.vpc-main]
+  
+  tags = {
     Name = var.igName
   }
   
