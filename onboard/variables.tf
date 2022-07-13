@@ -57,3 +57,15 @@ variable "igName" {
   description = "Type the name of your new Internet Gateway."
   default     = "MyIG"
 }
+
+variable "usrName" {
+  type = string
+  description = "Type the user name"
+  default = "user01"
+}
+
+variable "usrPasswd" {
+  type = string
+  description = "Type the password"
+  default = "P@ssw0rd1!P@ssw0rd1!"
+}
