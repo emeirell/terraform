@@ -69,5 +69,5 @@ resource "aws_iam_user_policy" "password" {
   name = "password"
   user = aws_iam_user.iam-user.name
   password = var.usPasswd
-  password_reset_required = "True"
+  password_reset_required = True
 }
