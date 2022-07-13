@@ -33,7 +33,7 @@ resource "aws_vpc" "vpc-main" {
 }
 # Create a Subnet
 resource "aws_subnet" "sub-main" {
-  vpc_id     = {aws_vpc.vpc-main.id}
+  vpc_id     = aws_vpc.vpc-main.id
   cidr_block = var.subcidr
   map_public_ip_on_launch = var.public # This makes the subnet public
   availability_zone = var.avaZone
@@ -45,7 +45,7 @@ resource "aws_subnet" "sub-main" {
 }
  # Create a Internet Gateway
  resource "aws_internet_gateway" "prod-igw" {
-    vpc_id = {aws_vpc.vpc-main.id}
+    vpc_id = aws_vpc.vpc-main.id
     tags {
         Name = var.igName
   }
