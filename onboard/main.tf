@@ -75,3 +75,12 @@ resource "aws_iam_user_login_profile" "password" {
   password_reset_required = true
   depends_on = [aws_iam_user.iam-user]
 }
+
+# Set GroupMembership
+resource "aws_iam_user_group_membership" "grp" {
+  user = aws_iam_user.iam-user.name
+
+  groups = [
+    aws_iam_group.group1.var.grpName,
+  ]
+}
