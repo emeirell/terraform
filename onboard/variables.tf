@@ -64,8 +64,8 @@ variable "usrName" {
   default = "user01"
 }
 
-variable "usrPasswd" {
+variable "grpName" {
   type = string
-  description = "Type the password"
-  default = "P@ssw0rd1!P@ssw0rd1!"
+  description = "Type the Group Name"
+  default = "Auditor"
 }
