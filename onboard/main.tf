@@ -64,9 +64,15 @@ resource "aws_iam_user" "iam-user" {
   }
 }
 
+# Provides an IAM access key
+resource "aws_iam_access_key" "iam-key" {
+  user = aws_iam_user.iam-user.name
+}
+
 # Set Password on User
 resource "aws_iam_user_login_profile" "password" {
   user = aws_iam_user.iam-user.name
   password = var.usrPasswd
   password_reset_required = true
+  depends_on = [aws_iam_user.iam-user]
 }
