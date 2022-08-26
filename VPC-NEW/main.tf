@@ -25,9 +25,9 @@ resource "aws_vpc" "main" {
   instance_tenancy = "default"
   enable_dns_support = var.dnsSupport    #gives you an internal domain name
   enable_dns_hostnames = var.hostSupport #gives you an internal host name
-  
-  tags = {
-    Name = var.vpcName
-  }
-  
+
+  tags = merge(
+    var.vpcName,
+    {},
+    )
 }
