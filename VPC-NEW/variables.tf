@@ -11,9 +11,12 @@ variable "cidr" {
 }
 
 variable "vpcName" {
-  type        = string
+  type        = map(string)
   description = "Type the name of your VPC"
-  default     = "MyVPC"
+  default     = {
+    "Name" = "Edu"
+    "App" = "Payroll"
+  }  
 }
 
 variable "dnsSupport" {
