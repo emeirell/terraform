@@ -17,6 +17,7 @@ resource "aws_vpc" "vpc_vra" {
   cidr_block = var.cidr
 
   tags = merge(
-    {for k, v in var.tags : v.key => v.value}
+    var.tags,
+    {for k, v in var.tags : v.key => v.value},
   )
 }
