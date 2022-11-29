@@ -15,3 +15,39 @@ variable "token" {
   description = "Personal Token"
   default     = "Your Token goes here"
 }
+
+variable "visibility" {
+  type        = string
+  description = "Project Visibility"
+  default     = "Private"
+}
+
+variable "boards" {
+  type        = string
+  description = "Enable Boards"
+  default     = "disabled"
+}
+
+variable "repositories" {
+  type        = string
+  description = "Enable Repositories"
+  default     = "disabled"
+}
+
+variable "pipelines" {
+  type        = string
+  description = "Enable Pipelines"
+  default     = "disabled"
+}
+
+variable "testplans" {
+  type        = string
+  description = "Enable TestPlans"
+  default     = "disabled"
+}
+
+variable "artifacts" {
+  type        = string
+  description = "Enable Artifacts"
+  default     = "disabled"
+}
