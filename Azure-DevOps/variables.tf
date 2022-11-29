@@ -25,7 +25,7 @@ variable "token" {
 variable "visibility" {
   type        = string
   description = "Project Visibility"
-  default     = "Private"
+  default     = "private"
 }
 
 variable "boards" {
