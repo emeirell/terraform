@@ -1,11 +1,17 @@
 variable "projname" {
   type        = string
-  description = "Nome do Projeto"
+  description = "Project Name"
   default     = "Project-01"
 }
 
 variable "projdesc" {
   type        = string
-  description = "Descrição do Projeto"
-  default     = "Projeto Top Secret"
+  description = "Project Description"
+  default     = "Top Secret Project"
+}
+
+variable "token" {
+  type        = string
+  description = "Personal Token"
+  default     = "Your Token goes here"
 }
