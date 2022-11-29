@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "azuredevops"{
-  org_service_url       = "https://dev.azure.com/emeirelles/"
+  org_service_url       = var.org
   personal_access_token = var.token
 }
   
