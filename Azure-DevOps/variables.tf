@@ -1,3 +1,9 @@
+variable "org" {
+  type        = string
+  description = "Org URL"
+  default     = "https://dev.azure.com/emeirelles/"
+}
+
 variable "projname" {
   type        = string
   description = "Project Name"
